@@ -8,10 +8,10 @@ import os
 # Get where script is located
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Set file path
+# Sets file path
 FILE_PATH = os.path.join(BASE_DIR, "team_stats.csv")
 
-# Read file
+# Reads the file
 df = pd.read_csv(FILE_PATH)
 
 # Class to represent a team's offensive performance stats
@@ -34,7 +34,10 @@ class TeamStats:
 
     # Getter for points per game by season length
     def scoring_efficiency(self):
-        games = 17 if self.year >= 2021 else 16  # Adjust for 17-game seasons
+        if self.year >= 2021:
+            games = 17
+        else:
+            games = 16
         return round(self.points_for / games, 2)
 
 # Class to load and process team stats from the csv
@@ -113,7 +116,11 @@ class KPIComparatorGUI:
         team2_name = self.team2_var.get()
 
         # Makes sure both teams are selected
-        if not team1_name or not team2_name:
+        if not team1_name:
+            messagebox.showerror("Error", "Please select both teams.")
+            return
+
+        if not team2_name:
             messagebox.showerror("Error", "Please select both teams.")
             return
 
@@ -121,7 +128,11 @@ class KPIComparatorGUI:
         team2 = self.data_manager.get_team_stats(team2_name, year)
 
         # Make sure data was found for the selected teams
-        if not team1 or not team2:
+        if not team1:
+            messagebox.showerror("Error", "Data not found for selected teams and year.")
+            return
+
+        if not team2:
             messagebox.showerror("Error", "Data not found for selected teams and year.")
             return
 
