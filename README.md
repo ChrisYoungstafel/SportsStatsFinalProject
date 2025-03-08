@@ -18,19 +18,19 @@ This Python program allows users to compare two sports teams' offensive performa
       python SportsStats.py
 
 ## File Structure
-   SportsStats.py - Main script that runs the GUI
-   team_stats.csv - Dataset containing team statistics
-   requirements.txt - Lists required dependencies
-   README.md - Documentation for the project
+- `SportsStats.py` - Main script that runs the GUI  
+- `team_stats.csv` - Dataset containing team statistics  
+- `requirements.txt` - Lists required dependencies  
+- `README.md` - Documentation for the project  
 
 ## Features
-   Compare two teams from any selected year.
-   View offensive stats like points per game, total yards, passing/rushing yards, and turnovers.
-   Graphical user interface (GUI) built with Tkinter.
-   Displays bar charts comparing key performance indicators.
+- Compare two teams from any selected year.  
+- View offensive stats like points per game, total yards, passing/rushing yards, and turnovers.  
+- Graphical user interface (GUI) built with Tkinter.  
+- Displays bar charts comparing key performance indicators.  
 
 ## Requirements
-   Python3
-   Pandas
-   Matplotlib
-   Tkinter
+- Python3  
+- Pandas  
+- Matplotlib  
+- Tkinter  
